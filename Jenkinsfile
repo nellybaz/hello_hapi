@@ -3,7 +3,11 @@
 pipeline {
     
     agent {
-        none
+        docker {
+            image 'node'
+            label 'my-defined-label'
+            args '-u root'
+        }
     }
 
     stages {
